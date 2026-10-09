@@ -1,0 +1,235 @@
+/* Danışsana — sayt (məlumat və hüquqi səhifələr). Şrift saytın özündədir (kənar sorğu, izləmə yoxdur). */
+@font-face {
+  font-family: 'Nunito';
+  src: url('fonts/Nunito-500.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('fonts/Nunito-700.ttf') format('truetype');
+  font-weight: 700 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('fonts/Nunito-900.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+}
+
+:root {
+  --red: #cc2538;
+  --red-deep: #a51c2d;
+  --on-red: #ffffff;
+  --bg: #fff8f6;
+  --card: #ffffff;
+  --ink: #1f1416;
+  --ink2: #6b5a5d;
+  --line: #f0dedb;
+  --soft: #ffe7e5;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #160e0f;
+    --card: #211617;
+    --ink: #f7edec;
+    --ink2: #b8a5a7;
+    --line: #3a2b2d;
+    --soft: #3b1a1d;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 500 17px/1.6 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+a {
+  color: var(--red);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+img {
+  max-width: 100%;
+}
+
+/* Başlıq zolağı */
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 20px;
+}
+.brand img {
+  width: 34px;
+  height: 34px;
+}
+.top nav {
+  display: flex;
+  gap: 14px;
+  font-size: 15px;
+}
+
+/* Giriş bloku (ana səhifə) */
+.hero {
+  background: var(--red);
+  color: var(--on-red);
+  text-align: center;
+  padding: 56px 16px 64px;
+}
+.hero img {
+  width: 104px;
+  height: 104px;
+}
+.hero h1 {
+  margin: 12px 0 6px;
+  font-size: clamp(34px, 8vw, 52px);
+  font-weight: 900;
+  line-height: 1.1;
+}
+.hero p {
+  margin: 0 auto;
+  max-width: 560px;
+  font-size: 19px;
+  opacity: 0.95;
+}
+.badge {
+  display: inline-block;
+  margin-top: 26px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--on-red);
+  color: var(--red-deep);
+  font-weight: 900;
+}
+
+/* Məzmun */
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 16px 48px;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin: 8px 0 24px;
+}
+.feature {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 18px;
+}
+.feature b {
+  display: block;
+  font-weight: 900;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.feature span {
+  color: var(--ink2);
+  font-size: 15px;
+}
+
+.doc h1 {
+  font-weight: 900;
+  font-size: clamp(28px, 6vw, 38px);
+  line-height: 1.15;
+  margin: 8px 0 4px;
+}
+.doc h2 {
+  font-weight: 900;
+  font-size: 22px;
+  margin: 32px 0 8px;
+}
+.doc h3 {
+  font-weight: 800;
+  font-size: 18px;
+  margin: 20px 0 6px;
+}
+.doc ul,
+.doc ol {
+  padding-left: 22px;
+}
+.doc li {
+  margin: 6px 0;
+}
+.meta {
+  color: var(--ink2);
+  font-size: 15px;
+  margin: 0 0 20px;
+}
+.note {
+  background: var(--soft);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin: 16px 0;
+}
+.cards {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0;
+}
+.cards a {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.cards a b {
+  display: block;
+  font-weight: 900;
+  color: var(--red);
+}
+.cards a span {
+  color: var(--ink2);
+  font-size: 15px;
+}
+
+/* Alt hissə */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 22px 16px 36px;
+  text-align: center;
+  color: var(--ink2);
+  font-size: 14px;
+}
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+  margin-bottom: 10px;
+}
+footer a {
+  color: var(--ink2);
+}
